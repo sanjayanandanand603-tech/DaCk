@@ -1,0 +1,49 @@
+import time
+
+def traffic_light(vehicle_count):
+
+    print("\nVehicle Count:", vehicle_count)
+
+    if vehicle_count > 20:
+        print("GREEN LIGHT - 40 seconds")
+        green_time = 40
+
+    elif vehicle_count > 10:
+        print("GREEN LIGHT - 25 seconds")
+        green_time = 25
+
+    else:
+        print("GREEN LIGHT - 15 seconds")
+        green_time = 15
+
+    print("RED LIGHT")
+    time.sleep(2)
+
+    print("YELLOW LIGHT")
+    time.sleep(2)
+
+    print("GREEN LIGHT")
+    time.sleep(2)
+
+    print("Traffic signal cycle completed!")
+
+print("SMART TRAFFIC MANAGEMENT SYSTEM")
+
+while True:
+
+    try:
+        vehicles = int(input("\nEnter number of vehicles (0-100): "))
+
+        if 0 <= vehicles <= 100:
+            traffic_light(vehicles)
+        else:
+            print("Enter a number between 0 and 100.")
+
+    except ValueError:
+        print("Please enter a valid number.")
+
+    choice = input("\nContinue? (yes/no): ").lower()
+
+    if choice != "yes":
+        print("System stopped.")
+        break
